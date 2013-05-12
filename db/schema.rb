@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130428050605) do
+ActiveRecord::Schema.define(:version => 20130512050233) do
 
   create_table "preferences", :force => true do |t|
     t.integer  "red"
@@ -22,8 +22,14 @@ ActiveRecord::Schema.define(:version => 20130428050605) do
     t.integer  "black"
     t.integer  "brown"
     t.integer  "white"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.integer  "dress"
+    t.integer  "short_dress"
+    t.integer  "long_dress"
+    t.integer  "strapless_dress"
+    t.integer  "tshirt"
+    t.integer  "pink"
   end
 
   create_table "users", :force => true do |t|
