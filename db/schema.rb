@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130512050233) do
+ActiveRecord::Schema.define(:version => 20130512051408) do
 
   create_table "preferences", :force => true do |t|
     t.integer  "red"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20130512050233) do
     t.integer  "strapless_dress"
     t.integer  "tshirt"
     t.integer  "pink"
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|
