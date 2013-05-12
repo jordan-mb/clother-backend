@@ -4,6 +4,8 @@ Clothing::Application.routes.draw do
 
   devise_for :users
 
+  match '/shop',   to: 'static_pages#shop'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
