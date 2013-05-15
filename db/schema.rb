@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130512051408) do
+ActiveRecord::Schema.define(:version => 20130515041347) do
+
+  create_table "photo_preferences", :force => true do |t|
+    t.integer "photo_id"
+    t.integer "preferences_id"
+  end
+
+  create_table "photos", :force => true do |t|
+    t.string "image_path"
+  end
 
   create_table "preferences", :force => true do |t|
     t.integer  "red"
