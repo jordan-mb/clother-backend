@@ -37,6 +37,10 @@ class PhotosController < ApplicationController
     @photos = Photo.all
   end
 
+  def show
+    @photo = Photo.find(params[:id])
+  end
+
   def show_file
     photo = Photo.find(params[:id])
 		send_data(photo.file, type: 'image/jpg', disposition: 'inline')

@@ -5,3 +5,12 @@
 .show-photo img {
   width: 100px;
 }
+
+.photo-large {
+  width: 400px;
+  margin: auto;
+}
+
+.photo-large img {
+  width: 400px;
+}

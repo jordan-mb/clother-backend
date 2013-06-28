@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= stylesheet_link_tag "photos" %>
+  </head>
+
+  <body>
+    <div class="photo-large">
+      <%= image_tag "/photos/#{@photo.id}/show_file"%>
+    </div>
+  </body>
+</html>

@@ -7,7 +7,9 @@
   <body>
     <% @photos.each do |photo| %>
     <div class="show-photo">
-      <%= image_tag "/photos/#{photo.id}/show_file"%>
+      <a href=<%="/photos/#{photo.id}"%>>
+        <%= image_tag "/photos/#{photo.id}/show_file"%>
+      </a>
       <% photo.tags.each do |p| %>
       <%= "#{p.name} " %>
       <% end %>
