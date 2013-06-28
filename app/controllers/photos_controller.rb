@@ -77,4 +77,19 @@ class PhotosController < ApplicationController
     photo = Photo.find(params[:id])
 		send_data(photo.file, type: 'image/jpg', disposition: 'inline')
   end
+
+  def destroy
+    photo = Photo.find(params[:id])
+		if photo
+      photo.delete
+
+      PhotoTag.all.each do |pt|
+        if pt.photo_id == photo.id
+          pt.delete
+        end
+      end
+    end
+
+		redirect_to photos_path
+  end
 end
