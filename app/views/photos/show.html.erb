@@ -2,11 +2,26 @@
 <html>
   <head>
     <%= stylesheet_link_tag "photos" %>
+    <%= javascript_include_tag "photos" %>
   </head>
 
   <body>
     <div class="photo-large">
       <%= image_tag "/photos/#{@photo.id}/show_file"%>
     </div>
+
+    <h1>Update Tags:</h1>
+    <form name="edit-photo" method="post" action=<%= "/photos/#{@photo.id}/update_tags" %>>
+      <% @tags.each do |tag| %>
+      <label for="tag"><%= tag.name %></label>
+      <% if @checked[tag.id] %>
+      <input  type="checkbox" name="tag<%= tag.id %>" value="<%= tag.id %>" checked="checked"><br />
+      <% else %>
+      <input  type="checkbox" name="tag<%= tag.id %>" value="<%= tag.id %>"><br />
+      <% end %>
+      <% end %>
+
+      <input type="submit" value="Submit">
+    </form>
   </body>
 </html>
