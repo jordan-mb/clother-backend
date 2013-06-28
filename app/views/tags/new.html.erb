@@ -1,0 +1,17 @@
+<h1>Add Tags</h1>
+
+<form name="add_tag" method="post" action="/tags">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+  <label for="tags">Add tags, seperated by ", "</label>
+  <input  type="text" name="tags"><br />
+
+  <input type="submit" value="Submit">
+</form>
+
+<br />
+
+<h2>All Tags:</h2>
+<% @tags.each do |tag| %>
+<%= tag.name %><br />
+<% end %>
