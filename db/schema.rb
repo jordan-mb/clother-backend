@@ -11,35 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130515041347) do
+ActiveRecord::Schema.define(:version => 20130628002656) do
 
-  create_table "photo_preferences", :force => true do |t|
-    t.integer "photo_id"
-    t.integer "preferences_id"
+  create_table "photo_tags", :force => true do |t|
+    t.integer  "photo_id"
+    t.integer  "tag_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "photos", :force => true do |t|
-    t.string "image_path"
+    t.binary "file"
   end
 
-  create_table "preferences", :force => true do |t|
-    t.integer  "red"
-    t.integer  "orange"
-    t.integer  "blue"
-    t.integer  "green"
-    t.integer  "yellow"
-    t.integer  "black"
-    t.integer  "brown"
-    t.integer  "white"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-    t.integer  "dress"
-    t.integer  "short_dress"
-    t.integer  "long_dress"
-    t.integer  "strapless_dress"
-    t.integer  "tshirt"
-    t.integer  "pink"
-    t.integer  "user_id"
+  create_table "tags", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|

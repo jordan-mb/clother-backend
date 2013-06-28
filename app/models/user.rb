@@ -4,6 +4,6 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
-  has_many :preferences
-
+  has_many :photos
+  has_many :tags, :through => :photos
 end
