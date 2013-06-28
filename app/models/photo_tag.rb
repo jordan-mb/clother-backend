@@ -3,4 +3,7 @@ class PhotoTag < ActiveRecord::Base
 
   belongs_to :photo
   belongs_to :tag
+
+  validates_presence_of :photo_id
+  validates_presence_of :user_id
 end
