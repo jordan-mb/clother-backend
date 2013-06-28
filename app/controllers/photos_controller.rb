@@ -34,15 +34,11 @@ class PhotosController < ApplicationController
   end
 
   def index
-    @tagged = []
-    @untagged = []
+    @photos = Photo.all
+  end
 
-    Photo.all.each do |p|
-      if p.tags.length > 0
-        @tagged << p
-      else
-        @untagged << p
-      end
-    end
+  def show_file
+    photo = Photo.find(params[:id])
+		send_data(photo.file, type: 'image/jpg', disposition: 'inline')
   end
 end

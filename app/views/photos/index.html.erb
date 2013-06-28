@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= stylesheet_link_tag "photos" %>
+  </head>
+
+  <body>
+    <% @photos.each do |photo| %>
+    <div class="show-photo">
+      <%= image_tag "/photos/#{photo.id}/show_file"%>
+      <% photo.tags.each do |p| %>
+      <%= "#{p.name} " %>
+      <% end %>
+    </div>
+    <% end %>
+  </body>
+</html>
