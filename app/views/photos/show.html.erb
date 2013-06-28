@@ -12,6 +12,8 @@
 
     <h1>Update Tags:</h1>
     <form name="edit-photo" method="post" action=<%= "/photos/#{@photo.id}/update_tags" %>>
+        <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
       <% @tags.each do |tag| %>
       <label for="tag"><%= tag.name %></label>
       <% if @checked[tag.id] %>

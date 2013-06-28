@@ -1,6 +1,8 @@
 <h1>Add a Photo</h1>
 
 <form name="photo" method="post" action="/photos" enctype="multipart/form-data">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
   <label for="photo_file"></label>
   <input  type="file" name="photo_file">
 
