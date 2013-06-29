@@ -1,0 +1,15 @@
+<h1><%= @user.email %></h1>
+
+<table>
+  <head>
+    <tr><td>Tag</td><td>Score</td></tr>
+  </head>
+  <body>
+    <% @preferences.each do |p| %>
+    <tr>
+      <td><%= p[0] %><td>
+      <td><%= p[1] %><td>
+    </tr>
+  </body>
+  <% end %>
+</table>
