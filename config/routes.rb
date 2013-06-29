@@ -4,7 +4,8 @@ Clothing::Application.routes.draw do
 
   devise_for :users
   resources :photos, :only => [:new, :create, :index, :show, :destroy]
-  resources :tags, :only => [:new, :create, :index, :show]
+  resources :tags, :only => [:new, :create, :index, :show, :destroy]
+  resources :users, :only => [:index, :show]
 
   get '/photos/:id/show_file', to: 'photos#show_file'
   post '/photos/:id/update_tags', to: 'photos#update_tags'

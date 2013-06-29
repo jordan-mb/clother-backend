@@ -24,4 +24,16 @@ class TagsController < ApplicationController
   def show
     @tag = Tag.find(params[:id])
   end
+
+  def destroy
+    tag = Tag.find(params[:id])
+    if tag
+      tag.delete
+
+      PhotoTag.where(:tag_id => tag.id).each { |pt| pt.delete }
+      UserTag.where(:tag_id => tag.id).each { |ut| ut.delete }
+    end
+
+    redirect_to tags_path
+  end
 end
