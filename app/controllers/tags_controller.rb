@@ -16,4 +16,12 @@ class TagsController < ApplicationController
 
     redirect_to new_tag_path
   end
+
+  def index
+    @tags = Tag.all
+  end
+
+  def show
+    @tag = Tag.find(params[:id])
+  end
 end
