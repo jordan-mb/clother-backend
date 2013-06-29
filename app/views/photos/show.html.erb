@@ -27,5 +27,8 @@
     </form>
 
     <%= link_to "Delete this photo", photo_path(@photo.id), :method => :delete %>
+
+    <%= link_to "Love this photo", "/photos/#{@photo.id}/love", :method => :post %>
+    <%= link_to "Hate this photo", "/photos/#{@photo.id}/hate", :method => :post %>
   </body>
 </html>
