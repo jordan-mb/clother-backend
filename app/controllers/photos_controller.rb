@@ -2,10 +2,12 @@ class PhotosController < ApplicationController
   before_filter :authenticate_user!
 
   def new
+    admin
     @tags = Tag.all
   end
 
   def create
+    admin
     file = params[:photo_file].tempfile.read
 
 		photo = Photo.new(params[:photo])
@@ -31,6 +33,7 @@ class PhotosController < ApplicationController
   end
 
   def update_tags
+    admin
     photo = Photo.find(params[:id])
     if photo
 
@@ -56,10 +59,12 @@ class PhotosController < ApplicationController
   end
 
   def index
+    admin
     @photos = Photo.all
   end
 
   def show
+    admin
     @photo = Photo.find(params[:id])
     @tags = Tag.all
 
@@ -74,11 +79,13 @@ class PhotosController < ApplicationController
   end
 
   def show_file
+    admin
     photo = Photo.find(params[:id])
 		send_data(photo.file, type: 'image/jpg', disposition: 'inline')
   end
 
   def destroy
+    admin
     photo = Photo.find(params[:id])
 		if photo
       photo.delete
@@ -101,6 +108,7 @@ class PhotosController < ApplicationController
     increment_value(params, false)
   end
 
+  private
   def increment_value(params, direction)
     user_id = current_user.id
     tag_ids = []
