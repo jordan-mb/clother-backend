@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <% if current_user.admin %>
+  <% if current_user && current_user.admin %>
   <head>
     <title>Clothing</title>
     <%= stylesheet_link_tag    "application", :media => "all" %>
