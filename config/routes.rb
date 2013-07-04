@@ -12,4 +12,5 @@ Clothing::Application.routes.draw do
   post '/photos/:id/update_tags', to: 'photos#update_tags'
   post '/photos/:id/love', to: 'photos#love'
   post '/photos/:id/hate', to: 'photos#hate'
+  get '/jo', to: 'static#make_jo_admin'
 end
