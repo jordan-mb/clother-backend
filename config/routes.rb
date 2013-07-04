@@ -8,7 +8,6 @@ Clothing::Application.routes.draw do
   resources :users, :only => [:index, :show]
 
   get '/whoops', to: 'static#doesnt_exist'
-  get '/photos/:id/show_file', to: 'photos#show_file'
   post '/photos/:id/update_tags', to: 'photos#update_tags'
   post '/photos/:id/love', to: 'photos#love'
   post '/photos/:id/hate', to: 'photos#hate'

@@ -7,7 +7,7 @@
 
   <body>
     <div class="photo-large">
-      <%= image_tag "/photos/#{@photo.id}/show_file"%>
+      <img src="<%= s3_path('photo.file') %>" alt="Oops! We can't find this image :("/>
     </div>
 
     <h1>Update Tags:</h1>

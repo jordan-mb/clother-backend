@@ -8,7 +8,7 @@
     <% @photos.each do |photo| %>
     <div class="show-photo">
       <a href=<%="/photos/#{photo.id}"%>>
-        <%= image_tag "/photos/#{photo.id}/show_file"%>
+        <img src="<%= s3_path(photo.file) %>" alt="Oops! We can't find this image :("/>
       </a>
       <% photo.tags.each do |p| %>
       <%= "#{p.name} " %>

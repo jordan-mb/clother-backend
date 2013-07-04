@@ -8,13 +8,13 @@ class PhotosController < ApplicationController
 
   def create
     admin
-    file = params[:photo_file].tempfile.read
 
-		photo = Photo.new(params[:photo])
-		photo.file = file
+		photo = Photo.new(:file => params[:photo_file_name])
 
     if photo.save
+      puts "Yes! the photo saved!"
       Tag.all.each do |tag|
+        puts tag.inspect
         if params["tag#{tag.id}"]
           if tag
             PhotoTag.create(
@@ -76,12 +76,6 @@ class PhotosController < ApplicationController
         @checked[tag.id] = nil
       end
     end
-  end
-
-  def show_file
-    admin
-    photo = Photo.find(params[:id])
-		send_data(photo.file, type: 'image/jpg', disposition: 'inline')
   end
 
   def destroy
