@@ -11,4 +11,5 @@ Clothing::Application.routes.draw do
   post '/photos/:id/update_tags', to: 'photos#update_tags'
   post '/photos/:id/love', to: 'photos#love'
   post '/photos/:id/hate', to: 'photos#hate'
+  get '/the_delete', to: 'static#the_delete'
 end
