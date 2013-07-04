@@ -2,10 +2,12 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!
 
   def index
+    admin
     @users = User.all
   end
 
   def show
+    admin
     @user = User.find(params[:id])
 
     preferences = {} #tag => value
