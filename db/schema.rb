@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130629010155) do
+ActiveRecord::Schema.define(:version => 20130704013847) do
 
   create_table "photo_tags", :force => true do |t|
     t.integer  "photo_id"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20130629010155) do
   end
 
   create_table "photos", :force => true do |t|
-    t.binary "file"
+    t.string "file"
   end
 
   create_table "tags", :force => true do |t|
