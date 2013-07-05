@@ -6,3 +6,11 @@ namespace :db do
     Tag.all.each { |t| t.destroy }
   end
 end
+
+desc "Make Jordan an admin"
+task :make_jordan_admin => :environment do
+  jo = User.where(:email => "jo.mravca@gmail.com")
+  jo.admin = true
+  jo.save!
+  puts jo.inspect
+end
