@@ -9,7 +9,7 @@ end
 
 desc "Make Jordan an admin"
 task :make_jordan_admin => :environment do
-  jo = User.where(:email => "jo.mravca@gmail.com")
+  jo = User.where(:email => "jo.mravca@gmail.com").first
   jo.admin = true
   jo.save!
   puts jo.inspect
