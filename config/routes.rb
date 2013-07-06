@@ -11,4 +11,7 @@ Clothing::Application.routes.draw do
   post '/photos/:id/update_tags', to: 'photos#update_tags'
   post '/photos/:id/love', to: 'photos#love'
   post '/photos/:id/hate', to: 'photos#hate'
+
+  #api
+  get '/pics', to: 'photos#index_json'
 end

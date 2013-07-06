@@ -63,6 +63,14 @@ class PhotosController < ApplicationController
     @photos = Photo.all
   end
 
+  def index_json
+    @photos = Photo.all
+
+    respond_to do |format|
+      format.json { render json: @photos }
+    end
+  end
+
   def show
     admin
     @photo = Photo.find(params[:id])
