@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  #before_filter :authenticate_user!
+  before_filter :authenticate_user!
 
   def new
     admin
@@ -12,9 +12,7 @@ class PhotosController < ApplicationController
 		photo = Photo.new(:file => params[:photo_file_name])
 
     if photo.save
-      puts "Yes! the photo saved!"
       Tag.all.each do |tag|
-        puts tag.inspect
         if params["tag#{tag.id}"]
           if tag
             PhotoTag.create(
@@ -83,6 +81,14 @@ class PhotosController < ApplicationController
       else
         @checked[tag.id] = nil
       end
+    end
+  end
+
+  def pick_photo
+    @photo = Photo.all.sample
+
+    respond_to do |format|
+      format.json { render json: @photo }
     end
   end
 
