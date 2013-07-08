@@ -1,0 +1,8 @@
+<h1>Coupon Info</h1>
+<p>Store: <%= @coupon.store %></p>
+<p>Clothing Item Name: <%= @coupon.clothing_name %></p>
+<p>Discount: %<%= @coupon.percent_off %></p>
+<p>Full Price: $<%= @coupon.full_price %></p>
+<p>Valid For: <%= @coupon.days_valid_for %> days</p>
+
+<%= link_to "Delete this coupon", coupon_path(@coupon.id), :method => :delete %>

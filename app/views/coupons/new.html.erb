@@ -1,0 +1,48 @@
+<h1>Add a New Coupon</h1>
+
+<form name="coupon" method="post" action="/coupons">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+  <label for="percent_off">Percent Discount</label>
+  <select name="percent_off">
+    <% (1..99).each do |x| %>
+    <option><%= x %></option>
+    <% end %>
+  </select>
+
+  <br />
+
+  <label for="store">Store Name</label>
+  <input type="text" name="store" />
+
+  <br />
+
+  <label for="clothing_name">Clothing Item Name</label>
+  <input type="text" name="clothing_name" />
+
+  <br />
+
+  <label for="days_valid_for">Valid for</label>
+  <select name="days_valid_for">
+    <% (1..99).each do |x| %>
+    <option><%= x %></option>
+    <% end %>
+  </select>
+  Days
+
+  <br />
+
+  <label for="full_price">Full Price ($)</label>
+  <input type="text" name="full_price" />
+
+  <br />
+  <br />
+
+  Coupon Tags: <br />
+  <% @tags.each do |tag| %>
+  <label for="tag"><%= tag.name %></label>
+  <input  type="checkbox" name="tag<%= tag.id %>" value="<%= tag.id %>"><br />
+  <% end %>
+
+  <input type="submit" value="Submit">
+</form>
