@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130704013847) do
+ActiveRecord::Schema.define(:version => 20130708050344) do
+
+  create_table "coupons", :force => true do |t|
+    t.integer  "percent_off"
+    t.string   "store"
+    t.string   "clothing_name"
+    t.datetime "valid_for"
+    t.integer  "full_price"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "photo_tags", :force => true do |t|
     t.integer  "photo_id"
@@ -28,6 +38,15 @@ ActiveRecord::Schema.define(:version => 20130704013847) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "user_coupons", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "coupon_id"
+    t.date     "expiration_date"
+    t.string   "code"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "user_tags", :force => true do |t|
