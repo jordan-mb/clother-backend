@@ -37,6 +37,7 @@ class TagsController < ApplicationController
 
       PhotoTag.where(:tag_id => tag.id).each { |pt| pt.delete }
       UserTag.where(:tag_id => tag.id).each { |ut| ut.delete }
+      CouponTag.where(:tag_id => tag.id).each { ct| ct.delete }
     end
 
     redirect_to tags_path
