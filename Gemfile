@@ -12,7 +12,6 @@ group :production do
 end
 
 gem 'devise'
-gem 'validates_timeliness', '~> 3.0'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
