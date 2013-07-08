@@ -9,4 +9,7 @@ class Coupon < ActiveRecord::Base
 
   has_many :user_coupons
   has_many :users, :through => :user_coupons
+
+  has_many :coupon_tags
+  has_many :tags, :through => :coupon_tags
 end
