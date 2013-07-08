@@ -6,4 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :photos
   has_many :tags, :through => :photos
+
+  has_many :user_coupons
+  has_many :coupons, :through => :user_coupons
 end
