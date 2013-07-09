@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
 
   after_create :send_admin_mail
   def send_admin_mail
-    #AdminMailer.new_user_waiting_for_approval(self).deliver
+    AdminMailer.new_user_waiting_for_approval(self).deliver
   end
 
   def self.send_reset_password_instructions(attributes={})
