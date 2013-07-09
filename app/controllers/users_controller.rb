@@ -28,6 +28,8 @@ class UsersController < ApplicationController
     user.approved = true
     user.save!
 
+    AdminMailer.approved(user).deliver
+
     redirect_to '/unapproved_users'
   end
 end
