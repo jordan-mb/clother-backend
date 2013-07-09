@@ -27,7 +27,7 @@ class PhotosController < ApplicationController
       flash[:error] = "Photo did not save"
     end
 
-    redirect_to root_path
+    redirect_to new_photo_path
   end
 
   def update_tags
