@@ -7,10 +7,11 @@ namespace :db do
   end
 end
 
-desc "Make Jordan an admin"
-task :make_jordan_admin => :environment do
+desc "Approve Jordan and make admin"
+task :jordan => :environment do
   jo = User.where(:email => "jo.mravca@gmail.com").first
   jo.admin = true
+  jo.approved = true
   jo.save!
   puts jo.inspect
 end
