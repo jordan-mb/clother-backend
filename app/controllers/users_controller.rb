@@ -15,4 +15,19 @@ class UsersController < ApplicationController
       @preferences << [Tag.find(ut.tag_id).name, ut.value]
     end
   end
+
+  def users_awaiting_approval
+    @users = []
+    User.all.each do |u|
+      @users << u if !u.approved?
+    end
+  end
+
+  def approve
+    user = User.find(params[:id])
+    user.approved = true
+    user.save!
+
+    redirect_to '/unapproved_users'
+  end
 end

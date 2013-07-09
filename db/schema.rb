@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130708204626) do
+ActiveRecord::Schema.define(:version => 20130708235932) do
 
   create_table "coupon_tags", :force => true do |t|
     t.integer  "coupon_id"
@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(:version => 20130708204626) do
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
     t.boolean  "admin",                  :default => false
+    t.boolean  "approved"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
