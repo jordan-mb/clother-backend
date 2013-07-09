@@ -1,3 +1,6 @@
+//= require jquery
+//= require jquery_ujs
+
 var photoId = null;
 
 var getPhoto = function() {
