@@ -1,10 +1,41 @@
-Clother
+<div class="wrapper">
+  <div class="navbar">
+    <div class="options">
+      <%= image_tag("gear.png") %>
+    </div>
+    <div class="logo">
+      <%= image_tag("t.gif", :class => "gif") %>
+      clother
+    </div>
+    <div class="deals">
+      <%= image_tag("dollar_sign.png") %>
+    </div>
+  </div>
 
-<div id="game-photo">
+  <div class="divider1">
+  </div>
 
-</div>
+  <div id="polaroid">
+    <div class="divider2">
+    </div>
 
-<div class="vote">
-  <img src="<%= s3_path('ilikeit_x.jpg') %>" alt="love" id="love"/>
-  <img src="<%= s3_path('notmything_x.jpg')%>" alt="hate" id="hate"/>
+    <div id="game-photo">
+    </div>
+
+     <div class="divider3">
+     </div>
+
+    <div class="vote">
+      <div class="hate">
+        <%= image_tag("t.gif", :class => "gif") %>
+        Not a fan...
+      </div>
+      <div class="love">
+        <%= image_tag("t.gif", :class => "gif") %>
+        I like this!</div>
+    </div>
+
+     <div class="divider4">
+    </div>
+  </div>
 </div>

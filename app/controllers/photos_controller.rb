@@ -144,6 +144,5 @@ class PhotosController < ApplicationController
     end
 
     redirect_to photos_path
-    #redirect to next image
   end
 end
