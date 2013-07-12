@@ -1,0 +1,43 @@
+.navbar {
+  font-family: Gotham;
+  color: white;
+  height: 100px;
+  background-color: rgb(76, 85, 91);
+}
+
+.navbar .options {
+  width: 19%;
+  display: block;
+  float: left;
+}
+
+.navbar .options img {
+  height: 80px;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+.navbar .logo {
+  font-size: 60px;
+  text-align: center;
+  height: 105%;
+  width: 60%;
+  float: left;
+}
+
+.navbar .logo a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar .deals {
+  width: 19%;
+  float: right;
+}
+
+.navbar .deals img {
+  height: 110px;
+  margin-top: -8px;
+  float: right;
+  margin-right: 8px;
+}

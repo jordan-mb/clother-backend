@@ -2,3 +2,9 @@
  *= require_self
  *= require_tree .
  */
+
+@font-face {
+    font-family: Gotham;
+    src: url("https://s3-us-west-2.amazonaws.com/clotherphotos/assets/Gotham-Book.otf");
+    font-weight:400;
+}
