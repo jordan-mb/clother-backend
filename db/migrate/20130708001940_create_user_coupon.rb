@@ -3,7 +3,7 @@ class CreateUserCoupon < ActiveRecord::Migration
     create_table :user_coupons do |t|
       t.integer :user_id
       t.integer :coupon_id
-      t.integer :expiration_date
+      t.date :expiration_date
       t.string :code
 
       t.timestamps
