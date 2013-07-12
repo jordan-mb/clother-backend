@@ -1,7 +1,7 @@
 var photoId = null;
 
 var getPhoto = function() {
-  $.getJSON('http://0.0.0.0:3000/pick_photo.json', function(data) {
+  $.getJSON('http://www.clother.me/pick_photo.json', function(data) {
     photoId = data.id;
     var elem = document.createElement("img");
     elem.setAttribute("src", "https://s3-us-west-2.amazonaws.com/clotherphotos/assets/" + data.file);
@@ -16,7 +16,7 @@ var empty = function() {
 };
 
 var vote = function(str) {
-  $.post("http://0.0.0.0:3000/photos/" + photoId + "/" + str);
+  $.post("http://www.clother.me/photos/" + photoId + "/" + str);
   empty();
   getPhoto();
 };
