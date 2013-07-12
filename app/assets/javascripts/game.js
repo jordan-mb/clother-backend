@@ -24,11 +24,11 @@ var vote = function(str) {
 $(function() {
   getPhoto();
 
-  $("#love").click(function() {
+  $(".love").click(function() {
     vote("love");
   });
 
-  $("#hate").click(function() {
+  $(".hate").click(function() {
     vote("hate");
   });
 });
