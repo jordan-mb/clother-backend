@@ -16,6 +16,20 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find_by_id(params[:id])
+  end
+
+  def update
+    @user = User.find_by_id(current_user.id)
+
+  	if @user.update_attributes(params[:user])
+  		redirect_to root_path
+  	else
+  		render 'edit'
+  	end
+  end
+
   def users_awaiting_approval
     @users = []
     User.all.each do |u|

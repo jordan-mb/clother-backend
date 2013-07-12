@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="navbar">
     <div class="options">
-      <%= image_tag("gear.png") %>
+      <a href="<%= edit_user_path(current_user.id) %>"><%= image_tag("gear.png") %></a>
     </div>
     <div class="logo">
       <%= image_tag("t.gif", :class => "gif") %>

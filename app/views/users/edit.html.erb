@@ -1,0 +1,26 @@
+<div class="edit-user">
+  <div class="header">Edit Your Info</div>
+
+  <%= form_for @user do |f| %>
+  <div class="info-section">
+    Email</br>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="info-section">
+    Password</br>
+    <%= f.password_field :password %>
+  </div>
+
+  <div class="info-section">
+    Password Confirmation</br>
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <%= f.submit "Update" %>
+  <% end %>
+
+  <br />
+
+  <%= link_to "Sign Out", "/users/sign_out", :method => "delete" %>
+</div>

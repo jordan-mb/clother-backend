@@ -5,7 +5,7 @@ Clothing::Application.routes.draw do
   devise_for :users
   resources :photos, :only => [:new, :create, :index, :show, :destroy]
   resources :tags, :only => [:new, :create, :index, :show, :destroy]
-  resources :users, :only => [:index, :show, :edit]
+  resources :users, :only => [:index, :show, :edit, :update]
   resources :coupons, :only => [:new, :create, :index, :show, :destroy]
 
   get '/whoops', to: 'static#doesnt_exist'

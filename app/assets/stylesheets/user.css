@@ -1,0 +1,28 @@
+.edit-user {
+  font-family: Gotham;
+  width: 95%;
+  max-width: 850px;
+  display: block;
+  margin: auto;
+}
+
+.edit-user .header {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 80px;
+}
+
+.edit-user .info-section {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.edit-user .info-section input {
+  height: 35px;
+  font-size: 20px;
+}
+
+.edit-user input[type="submit"] {
+  font-family: Gotham;
+  font-size: 25px;
+}
